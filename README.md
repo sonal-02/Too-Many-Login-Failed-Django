@@ -1,4 +1,4 @@
-# Too-Many-Login-Attempt-Django
+# Too-Many-Login-Failed-Django
 
 ### Middleware.py 
 
