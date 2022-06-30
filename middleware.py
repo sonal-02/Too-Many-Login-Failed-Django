@@ -16,11 +16,11 @@ class RequestMiddleware:
             if self.number_of_failed_attempt_count > 3:
                  request.session['failed_attempt'] = 0
                  self.number_of_failed_attempt_count  = 0
-                 return JsonResponse({"Warning":"To many Attempts"})
+                 return JsonResponse({"Warning":"To many Attempts"})  # or you can redirect to some other page
             return response
           
           
-      @receiver(user_login_failed)
+      @receiver(user_login_failed)  
       def login_failed(sender, credentials, request, **kwargs):
           if request.session.get('failed_attempt'):
               request.session['failed_attempt'] += request.session.get( 'failed_attempt')
